@@ -9,8 +9,16 @@ public class Main {
         static int diversion = 6;
 
     public static void main(String[] args) {
-        int opcion = menuPrincipal();
-        System.out.println("Opcion elegida: " +opcion);
+        int opcion;
+
+        do {
+            opcion = menuPrincipal();
+
+            switch (opcion) {
+                case 1 -> mostrarEstado();
+                case 0 -> System.out.println("Saliendo...");
+            }
+        } while (opcion !=0);
     }
 
     private static int menuPrincipal() {
