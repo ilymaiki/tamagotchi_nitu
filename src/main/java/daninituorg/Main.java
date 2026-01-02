@@ -88,8 +88,9 @@ public class Main {
         if (saciedad >= 10) {
             System.out.println("No tengo hambre.");
         } else {
-            saciedad = Math.min(10, saciedad + 5);
+            saciedad = Math.min(10, saciedad + 3);
             diversion--;
+            mostrarEstado();
         }
     }
 }
