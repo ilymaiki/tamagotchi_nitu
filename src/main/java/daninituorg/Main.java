@@ -16,6 +16,7 @@ public class Main {
 
             switch (opcion) {
                 case 1 -> mostrarEstado();
+                case 2 -> comer();
                 case 0 -> System.out.println("Saliendo...");
             }
         } while (opcion !=0);
@@ -56,10 +57,9 @@ public class Main {
             System.out.println("(x_x) :( Game Over ):");
             System.out.println(" /|_|\\");
             System.out.println("  | |");
-            return;
         }
 
-        if (saciedad > 5 && energia > 55 && diversion >5) { // Estado de felicidad máxima.
+        if (saciedad > 5 && energia > 5 && diversion >5) { // Estado de felicidad.
             System.out.println("(•‿•) ¡Estoy feliz!");
             System.out.println(" /|_|\\");
             System.out.println("  | |");
@@ -81,6 +81,15 @@ public class Main {
             System.out.println("(•︵•) ¡Tengo hambre! 🍗");
             System.out.println(" /|x|\\");
             System.out.println("  | |");
+        }
+    }
+
+    private static void comer() {
+        if (saciedad >= 10) {
+            System.out.println("No tengo hambre.");
+        } else {
+            saciedad = Math.min(10, saciedad + 5);
+            diversion--;
         }
     }
 }
