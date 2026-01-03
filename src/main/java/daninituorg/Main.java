@@ -20,6 +20,7 @@ public class Main {
                 case 2 -> comer();
                 case 3 -> jugar();
                 case 4 -> dormir();
+                case 5 -> curar();
                 case 0 -> System.out.println("Saliendo...");
             }
         } while (opcion !=0);
@@ -35,6 +36,7 @@ public class Main {
             System.out.println("2. Comer.");
             System.out.println("3. Jugar.");
             System.out.println("4. Dormir.");
+            System.out.println("5. Curar (NUEVA OPCION.");
             System.out.println("------------");
             System.out.println("0. Salir.");
             System.out.println("Seleccione una opcion del menu.");
@@ -46,7 +48,7 @@ public class Main {
 
             opcion = lector.nextInt();
 
-            if (opcion < 0 || opcion > 4) {
+            if (opcion < 0 || opcion > 5) {
                 System.out.println("Opcion fuera de rango");
             }
 
@@ -117,5 +119,14 @@ public class Main {
             diversion -= 2;
             mostrarEstado();
         }
+    }
+
+    private static void curar() {
+        System.out.println("Te estás curando...");
+
+        energia = java.lang.Math.min(10, energia + 2);
+        diversion = java.lang.Math.min(10, diversion +2);
+        saciedad--;
+        mostrarEstado();
     }
 }
