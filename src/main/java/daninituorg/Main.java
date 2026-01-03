@@ -7,7 +7,7 @@ public class Main {
         static int saciedad = 6;
         static int energia = 6;
         static int diversion = 6;
-    private static int Math;
+        private static int Math;
 
     public static void main(String[] args) {
         int opcion;
@@ -91,7 +91,7 @@ public class Main {
         if (saciedad >= 10) {
             System.out.println("No tengo hambre.");
         } else {
-            saciedad = java.lang.Math.min(10, saciedad + 3);
+            saciedad = java.lang.Math.min(10, saciedad + 2);
             diversion--;
             mostrarEstado();
         }
@@ -101,7 +101,7 @@ public class Main {
         if (diversion >= 10) {
             System.out.println("Ahora no me apetece jugar.");
         } else {
-            diversion = java.lang.Math.min(10, diversion + 3);
+            diversion = java.lang.Math.min(10, diversion + 4);
             saciedad--;
             energia--;
             mostrarEstado();
@@ -113,7 +113,7 @@ public class Main {
             System.out.println("No tengo sueño.");
         } else {
             energia = java.lang.Math.min(10, energia + 3);
-            saciedad -= 3;
+            saciedad -= 2;
             diversion -= 2;
             mostrarEstado();
         }
