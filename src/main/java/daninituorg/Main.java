@@ -17,6 +17,7 @@ public class Main {
             switch (opcion) {
                 case 1 -> mostrarEstado();
                 case 2 -> comer();
+                case 3 -> jugar();
                 case 0 -> System.out.println("Saliendo...");
             }
         } while (opcion !=0);
@@ -90,6 +91,17 @@ public class Main {
         } else {
             saciedad = Math.min(10, saciedad + 3);
             diversion--;
+            mostrarEstado();
+        }
+    }
+
+    private static void jugar() {
+        if (diversion >= 10) {
+            System.out.println("Ahora no me apetece jugar.");
+        } else {
+            diversion = Math.min(10, diversion + 3);
+            saciedad--;
+            energia--;
             mostrarEstado();
         }
     }
